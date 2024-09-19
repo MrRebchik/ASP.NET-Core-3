@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authentication.OAuth.Claims;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+//builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -11,6 +13,8 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
+app.UseDeveloperExceptionPage();
+
 app.UseStatusCodePages();
 
 app.UseStaticFiles();
@@ -19,8 +23,8 @@ app.UseRouting();
 
 //app.UseAuthorization();
 
-app.MapRazorPages();
+//app.MapRazorPages();
 
-//app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
+app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
 
 app.Run();
