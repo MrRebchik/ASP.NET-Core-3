@@ -1,1 +1,9 @@
-﻿<h4>Welcum</h4>
+﻿@model IQueryable<Product>
+@foreach (var p in Model)
+{
+    <div>
+        <h3>@p.Name</h3>
+        @p.Description
+        <h4>@p.Price.ToString("c")</h4>
+    </div>
+}
