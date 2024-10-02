@@ -41,7 +41,7 @@ namespace SportsStore.Tests
                 new Dictionary<object, object>(), "");
             var content = new Mock<TagHelperContent>();
             TagHelperOutput output = new TagHelperOutput("div",
-                new TagHelperAttributeList(new),
+                new TagHelperAttributeList(),
                 (cache, encoder) => Task.FromResult(content.Object));
 
             helper.Process(ctx, output);
